@@ -80,14 +80,7 @@ export default class UserCrud extends Component {
     user[event.target.name] = event.target.value;
     this.setState({ user });
   }
-  checkCep(e) {
-    const cep = e.target.value;
-    fetch(`http://viacep.com.br/ws/${cep}/json`)
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
-  }
+ 
   //masks
   cpf(e) {
     let value = e.currentTarget.value;
@@ -116,6 +109,8 @@ export default class UserCrud extends Component {
     e.currentTarget.value = value;
     return e;
   }
+// End masks
+
 
   renderForm() {
     return (
@@ -212,7 +207,7 @@ export default class UserCrud extends Component {
               <label htmlFor="">CEP</label>
 
               <input
-                onBlur={this.checkCep}
+                 
                 onKeyUp={this.zipcode}
                 type="text"
                 className="form-control"

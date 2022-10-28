@@ -1,16 +1,3 @@
 {
-  "users": [
-    {
-      "name": "123",
-      "birthday": "",
-      "cpf": "123",
-      "gender": "masculino",
-      "adress": "",
-      "status": "active",
-      "complement": "",
-      "zipcode": "",
-      "city": "",
-      "id": 1
-    }
-  ]
+  "users": []
 }
