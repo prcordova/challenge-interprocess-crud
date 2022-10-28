@@ -57,9 +57,7 @@ export default class UserCrud extends Component {
     if (this.state.user.birthday === "") {
       alert("Campo data de nascimento é obrigatório!");
     }
-    if (this.state.user.status === "") {
-      alert("Campo nome é obrigatório!");
-    }
+   
 
     if (name && this.state.user.cpf !== "") {
       const user = this.state.user;
