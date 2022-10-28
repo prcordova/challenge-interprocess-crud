@@ -53,10 +53,9 @@ export default class UserCrud extends Component {
     const cpf = this.state.user.cpf;
     const birthday = this.state.user.birthday;
 
-
-    const cpfReady = cpf && cpf.length === 14
-    const birthdayReady = birthday && birthday.length === 8
-    const nameReady = name !== ''
+    const cpfReady = cpf && cpf.length === 14;
+    const birthdayReady = birthday && birthday.length === 8;
+    const nameReady = name !== "";
 
     if (!nameReady) {
       toast("Campo nome é obrigatório!");
@@ -64,15 +63,14 @@ export default class UserCrud extends Component {
     if (!cpfReady) {
       toast("CPF é obrigatório e deve ter 14 digitos!");
     }
- 
-    if (!birthdayReady) {
-      toast("Campo data de nascimento é obrigatório e deve seguir exemplo : DD.MM.AAAA!");
-    }
-    
-   
 
-    const readyToSave = cpfReady && nameReady && birthdayReady
-      
+    if (!birthdayReady) {
+      toast(
+        "Campo data de nascimento é obrigatório e deve conter 8 digitos : DD.MM.AAAA!"
+      );
+    }
+
+    const readyToSave = cpfReady && nameReady && birthdayReady;
 
     if (readyToSave) {
       const user = this.state.user;
