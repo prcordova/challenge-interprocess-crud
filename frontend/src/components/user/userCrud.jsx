@@ -1,7 +1,11 @@
 import React, { Component, useState } from "react";
+
 import Main from "../template/Main";
 import axios from "axios";
 import * as S from "./styles";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Switch } from "react-router";
 
 const headerProps = {
   icon: "users",
@@ -43,23 +47,34 @@ export default class UserCrud extends Component {
   clear() {
     this.setState({ user: initialState.user });
   }
- 
 
   save() {
     const name = this.state.user.name;
+    const cpf = this.state.user.cpf;
+    const birthday = this.state.user.birthday;
 
-    if (this.state.user.cpf === "") {
-      alert("Campo cpf é obrigatório!");
+
+    const cpfReady = cpf && cpf.length === 14
+    const birthdayReady = birthday && birthday.length === 8
+    const nameReady = name !== ''
+
+    if (!nameReady) {
+      toast("Campo nome é obrigatório!");
     }
-    if (this.state.user.name === "") {
-      alert("Campo nome é obrigatório!");
+    if (!cpfReady) {
+      toast("CPF é obrigatório e deve ter 14 digitos!");
     }
-    if (this.state.user.birthday === "") {
-      alert("Campo data de nascimento é obrigatório!");
+ 
+    if (!birthdayReady) {
+      toast("Campo data de nascimento é obrigatório e deve seguir exemplo : DD.MM.AAAA!");
     }
+    
    
 
-    if (name && this.state.user.cpf !== "") {
+    const readyToSave = cpfReady && nameReady && birthdayReady
+      
+
+    if (readyToSave) {
       const user = this.state.user;
       const method = user.id ? "put" : "post";
       const url = user.id ? `${baseUrl}/${user.id}` : baseUrl;
@@ -67,6 +82,7 @@ export default class UserCrud extends Component {
         const list = this.getUpdatedList(resp.data);
         this.setState({ user: initialState.user, list });
       });
+      toast("Usuário cadastrado com sucesso!");
     }
   }
 
@@ -80,10 +96,11 @@ export default class UserCrud extends Component {
     user[event.target.name] = event.target.value;
     this.setState({ user });
   }
- 
+
   //masks
   cpf(e) {
     let value = e.currentTarget.value;
+
     e.currentTarget.maxLength = 14;
     value = value.replace(/\D/g, "");
     value = value.replace(/(\d)(\d{2})$/, "$1-$2");
@@ -109,8 +126,7 @@ export default class UserCrud extends Component {
     e.currentTarget.value = value;
     return e;
   }
-// End masks
-
+  // End masks
 
   renderForm() {
     return (
@@ -188,11 +204,11 @@ export default class UserCrud extends Component {
                         onChange={(e) => this.updateField(e)}
                       >
                         Ativo
-                        <option value="inactive" name="inactive">
-                          Inativo
-                        </option>
                         <option value="active" name="active">
                           Ativo
+                        </option>
+                        <option value="inactive" name="inactive">
+                          Inativo
                         </option>
                       </select>
                     </S.statusField>
@@ -207,7 +223,6 @@ export default class UserCrud extends Component {
               <label htmlFor="">CEP</label>
 
               <input
-                 
                 onKeyUp={this.zipcode}
                 type="text"
                 className="form-control"
@@ -337,6 +352,7 @@ export default class UserCrud extends Component {
               <i class="fa-regular fa-eye"></i>
             </button>
           </td>
+          <ToastContainer />
         </tr>
       );
     });

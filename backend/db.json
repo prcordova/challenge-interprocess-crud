@@ -1,3 +1,40 @@
 {
-  "users": []
+  "users": [
+    {
+      "name": "123",
+      "birthday": "12312312",
+      "cpf": "1.231.231-2312",
+      "gender": "masculino",
+      "adress": "",
+      "status": "active",
+      "complement": "",
+      "zipcode": "",
+      "city": "",
+      "id": 2
+    },
+    {
+      "name": "123",
+      "birthday": "12312312",
+      "cpf": "1.231.231-2312",
+      "gender": "masculino",
+      "adress": "",
+      "status": "active",
+      "complement": "",
+      "zipcode": "",
+      "city": "",
+      "id": 3
+    },
+    {
+      "name": "123123",
+      "birthday": "12312312",
+      "cpf": "1.231.231-2312",
+      "gender": "feminino",
+      "adress": "",
+      "status": "inactive",
+      "complement": "",
+      "zipcode": "",
+      "city": "",
+      "id": 4
+    }
+  ]
 }
