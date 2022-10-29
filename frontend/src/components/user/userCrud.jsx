@@ -327,10 +327,10 @@ export default class UserCrud extends Component {
         <tr key={user.id}>
           <td>{user.id}</td>
           <td>{user.name}</td>
-          <td>{user.birthday}</td>
+          <td>{user.birthday.replace(/(\d{2})(\d{2})(\d{4})/, "$1/$2/$3")}</td>
           <td>{user.cpf}</td>
           <td>{user.gender === "masculino" ? "Masculino" : "Feminino"}</td>
-          <td>{user.adress}</td>
+          <td>{user.adress ? user.adress : 'Endereço não cadastrado'}</td>
           <td>{user.status === "active" ? "Ativo" : "Inativo"}</td>
 
           <td>

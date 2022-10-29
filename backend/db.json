@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "name": "123123123",
-      "birthday": "12312312",
-      "cpf": "1.231.231-2312",
+      "name": "Pedro Ricardo",
+      "birthday": "29011992",
+      "cpf": "02.405.300-085",
       "gender": "masculino",
-      "adress": "",
+      "adress": "teste",
       "status": "active",
       "complement": "",
       "zipcode": "",
@@ -13,9 +13,9 @@
       "id": 1
     },
     {
-      "name": "123123",
-      "birthday": "12312312",
-      "cpf": "12.312.333-333",
+      "name": "teste",
+      "birthday": "11231231",
+      "cpf": "1.231.231-2312",
       "gender": "masculino",
       "adress": "",
       "status": "active",
