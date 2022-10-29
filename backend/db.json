@@ -1,28 +1,16 @@
 {
   "users": [
     {
-      "name": "Pedro Ricardo",
+      "name": "Pedro Oliveira",
       "birthday": "29011992",
-      "cpf": "02.405.300-085",
+      "cpf": "02.030.393-983",
       "gender": "masculino",
-      "adress": "teste",
+      "adress": "Rua dos testes",
       "status": "active",
-      "complement": "",
-      "zipcode": "",
-      "city": "",
+      "complement": "Complemento dos testes",
+      "zipcode": "92035-013",
+      "city": "Cidade dos testes",
       "id": 1
-    },
-    {
-      "name": "teste",
-      "birthday": "11231231",
-      "cpf": "1.231.231-2312",
-      "gender": "masculino",
-      "adress": "",
-      "status": "active",
-      "complement": "",
-      "zipcode": "",
-      "city": "",
-      "id": 2
     }
   ]
 }
