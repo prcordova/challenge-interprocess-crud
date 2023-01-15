@@ -3,14 +3,26 @@
     {
       "name": "Pedro Oliveira",
       "birthday": "29011992",
-      "cpf": "02.030.393-983",
+      "cpf": "1.231.231-2312",
       "gender": "masculino",
       "adress": "Rua dos testes",
-      "status": "active",
+      "status": "inactive",
       "complement": "Complemento dos testes",
       "zipcode": "92035-013",
       "city": "Cidade dos testes",
       "id": 1
+    },
+    {
+      "name": "asdasdasd",
+      "birthday": "12312312",
+      "cpf": "1.231.231-2312",
+      "gender": "masculino",
+      "adress": "",
+      "status": "active",
+      "complement": "",
+      "zipcode": "",
+      "city": "",
+      "id": 2
     }
   ]
 }
